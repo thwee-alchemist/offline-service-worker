@@ -6,7 +6,8 @@ self.addEventListener('install', function(event) {
         '/test/app.js',
         '/test/index.html',
         '/test/404.html',
-        '/test/signature_pad.min.js'
+        '/test/signature_pad.min.js',
+        '/test/index.css'
       ]);
     })
   );
@@ -36,9 +37,29 @@ self.addEventListener('fetch', function(event) {
   }));
 });
 
+var signatures = [];
+
 self.addEventListener('message', function(event){
-  console.log('SW received message');
-  event.ports[0].postMessage(msg);
+  console.dir(event);
+  if(event.data.command == 'signature'){
+    signatures.push(event.data.signature);
+    self.clients.matchAll().then(function(clients){
+      clients.forEach(function(client){
+        client.postMessage({
+          reply: 'signature',
+          signature: event.data.signature 
+        })
+      });
+    });
+  }else if (event.data.command == 'signatures'){
+    self.clients.matchAll().then(function(clients){
+      clients.forEach(function(client){
+        client.postMessage({
+          reply: 'signatures',
+          signatures: signatures 
+        })
+      });
+    });
+  }
 });
 
-console.log(self);

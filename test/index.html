@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
 
+    <link rel="stylesheet" href="index.css">
     <title>Service worker demo</title>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,11 +16,16 @@
     <h1>Service Worker Test</h1>
 
     <section>
-      Open the console;
-
-      <canvas></canvas>
+      <canvas id="signature-pad" width="500" height="300"></canvas>
+      <button id="submit-signature">Submit</button>
+      <button id="get-signatures">Retrieve</button>
     </section>
 
+    <section id="signatures">
+      Signatures:
+    </section>
+
+    <script src="signature_pad.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
