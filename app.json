@@ -1,0 +1,6 @@
+{
+    "name": "offline-service-worker",
+    "description": "",
+    "repository": "https://github.com/thwee-alchemist/offline-service-worker",
+    "keywords": ["node", "express", "heroku", "service-worker"]
+  }

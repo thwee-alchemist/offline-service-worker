@@ -1,0 +1,23 @@
+{
+  "name": "offline-service-worker",
+  "version": "0.0.0",
+  "description": "A simple offline service worker experiment",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.7.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thwee-alchemist/offline-service-worker.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "service worker",
+    "offline"
+  ]
+}
