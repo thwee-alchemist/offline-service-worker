@@ -6,7 +6,7 @@ self.addEventListener('install', function(event) {
         '/test/app.js',
         '/test/index.html',
         '/test/404.html',
-        '/test/signature_pad>min.js
+        '/test/signature_pad.min.js'
       ]);
     })
   );
@@ -40,3 +40,5 @@ self.addEventListener('message', function(event){
   console.log('SW received message');
   event.ports[0].postMessage(msg);
 });
+
+console.log(self);
