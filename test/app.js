@@ -22,8 +22,13 @@ if ('serviceWorker' in navigator) {
 
     if(event.data.reply == 'signatures'){
       var signatures = document.querySelector('#signatures');
+      
+      document.querySelectorAll('.signature').forEach(signature => {
+        signature.remove();
+      }).
       event.data.signatures.forEach(function(image_data){
         var image = new Image(500, 300);
+        image.classList.add('signature');
         image.src = image_data;
         signatures.appendChild(image);
       })
